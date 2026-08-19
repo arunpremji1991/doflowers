@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #2c1b12;
+  --color-terracotta: #a8582f;
+  --color-terracotta-dark: #7a3f24;
+  --color-blush: #f7dfc7;
+  --color-cream: #fbf6ef;
+  --color-white: #ffffff;
+  --color-line: #e9dcc9;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-terracotta: var(--color-terracotta);
+  --color-terracotta-dark: var(--color-terracotta-dark);
+  --color-blush: var(--color-blush);
+  --color-cream: var(--color-cream);
+  --color-line: var(--color-line);
+  --font-serif: var(--font-hk);
+  --font-serif-ar: var(--font-almohanad);
+  --font-sans: var(--font-hk);
+  --font-sans-ar: var(--font-almohanad);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+:lang(ar) {
+  font-family: var(--font-sans-ar), var(--font-sans), sans-serif;
+}
+
+:lang(ar) .font-serif {
+  font-family: var(--font-serif-ar), var(--font-serif), serif;
+  font-weight: 800;
+}
+
+::selection {
+  background: var(--color-terracotta);
+  color: var(--color-white);
+}
+
+.container-luxe {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-luxe {
+    padding-inline: 2.5rem;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
