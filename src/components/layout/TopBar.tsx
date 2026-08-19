@@ -10,8 +10,17 @@ export function TopBar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   ];
 
   return (
-    <div className="hidden border-b border-[var(--color-line)] bg-[var(--color-blush)]/25 sm:block">
-      <div className="container-luxe flex h-10 items-center justify-between text-[13px]">
+    <div className="relative hidden overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-blush)]/25 sm:block">
+      <div
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage: "url(/uploads/brand/pattern-monogram.svg)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "180px 90px",
+        }}
+        aria-hidden="true"
+      />
+      <div className="container-luxe relative flex h-10 items-center justify-between text-[13px]">
         <ul className="flex items-center gap-6">
           {items.map((item) => (
             <li key={item.label} className="flex items-center gap-1.5 text-[var(--color-ink)]/75">

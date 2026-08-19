@@ -71,7 +71,7 @@ export function CartDrawer({ locale, dict }: { locale: Locale; dict: Dictionary 
                 if (!product) return null;
                 return (
                   <li key={line.lineId} className="flex gap-4 py-5">
-                    <div className="relative h-24 w-20 shrink-0 overflow-hidden bg-[var(--color-cream)]">
+                    <div className="relative h-24 w-20 shrink-0 overflow-hidden rounded-lg bg-[var(--color-cream)]">
                       <Media seed={product.images[0]} alt={product.name[locale]} sizes="80px" />
                     </div>
                     <div className="flex flex-1 flex-col justify-between">
@@ -123,7 +123,7 @@ export function CartDrawer({ locale, dict }: { locale: Locale; dict: Dictionary 
               <Link
                 href={`/${locale}/checkout`}
                 onClick={close}
-                className="focus-ring flex w-full items-center justify-center bg-[var(--color-terracotta)] px-5 py-3.5 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta-dark)]"
+                className="btn-textured focus-ring flex w-full items-center justify-center bg-[var(--color-terracotta)] px-5 py-3.5 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta-dark)]"
               >
                 {dict.cart.checkout}
               </Link>

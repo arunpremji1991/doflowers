@@ -60,7 +60,7 @@ export function SearchOverlay({ locale, dict }: { locale: Locale; dict: Dictiona
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
             {results.slice(0, 12).map((product) => (
               <Link key={product.id} href={`/${locale}/p/${product.slug}`} onClick={close} className="focus-ring group">
-                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-cream)]">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[var(--color-cream)]">
                   <Media seed={product.images[0]} alt={product.name[locale]} className={cn("transition-transform duration-500 group-hover:scale-105")} />
                 </div>
                 <p className="mt-2 text-sm">{product.name[locale]}</p>

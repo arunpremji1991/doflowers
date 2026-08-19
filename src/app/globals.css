@@ -66,3 +66,20 @@ body {
   outline: 2px solid var(--color-terracotta);
   outline-offset: 2px;
 }
+
+/* Faint brand-pattern texture for primary buttons — light touch, not a heavy repeat. */
+.btn-textured {
+  position: relative;
+  isolation: isolate;
+}
+.btn-textured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(/uploads/brand/pattern-monogram.svg);
+  background-repeat: repeat;
+  background-size: 140px 70px;
+  opacity: 0.1;
+  pointer-events: none;
+}

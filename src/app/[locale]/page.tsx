@@ -44,7 +44,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href={`/${locale}/collections/new`}
-              className="focus-ring bg-white px-7 py-3.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-ink)] transition-colors hover:bg-[var(--color-blush)]"
+              className="btn-textured focus-ring bg-white px-7 py-3.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-ink)] transition-colors hover:bg-[var(--color-blush)]"
             >
               {dict.brand.heroCta}
             </Link>

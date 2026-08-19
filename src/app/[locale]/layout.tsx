@@ -9,6 +9,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { CartDrawerRoot } from "@/components/cart/CartDrawerRoot";
+import { SiteBackground } from "@/components/brand/SiteBackground";
 
 // English — brand typeface for both display and body text.
 const hkGrotesk = localFont({
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir(locale)}>
       <body className={`${hkGrotesk.variable} ${alMohanad.variable} font-sans antialiased`}>
+        <SiteBackground />
         <CartDrawerRoot locale={locale} dict={dict}>
           <TopBar locale={locale} dict={dict} />
           <Header locale={locale} dict={dict} />

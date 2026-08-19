@@ -124,7 +124,7 @@ export function PurchasePanel({ product, locale, dict }: { product: Product; loc
           onClick={handleAddToCart}
           disabled={!product.inStock}
           className={cn(
-            "flex-1 bg-[var(--color-ink)] py-4 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta)]",
+            "btn-textured flex-1 bg-[var(--color-ink)] py-4 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta)]",
             !product.inStock && "cursor-not-allowed opacity-50"
           )}
         >

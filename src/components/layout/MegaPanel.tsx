@@ -40,7 +40,16 @@ export function MegaPanel({ locale, dict }: { locale: Locale; dict: Dictionary }
         role="dialog"
         aria-label={dict.megaMenu.title}
       >
-        <div className="flex items-center justify-between border-b border-[var(--color-line)] px-6 py-5">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-64 opacity-[0.08]"
+          style={{
+            backgroundImage: "url(/uploads/brand/pattern-monogram.svg)",
+            backgroundRepeat: "repeat",
+            backgroundSize: "180px 90px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative flex items-center justify-between border-b border-[var(--color-line)] px-6 py-5 bg-white">
           <h2 className="font-serif text-2xl">{dict.megaMenu.title}</h2>
           <div className="flex items-center gap-3">
             <span className="sm:hidden">
@@ -60,7 +69,7 @@ export function MegaPanel({ locale, dict }: { locale: Locale; dict: Dictionary }
                 key={g.slug}
                 href={`/${locale}/${g.slug}`}
                 onClick={close}
-                className="focus-ring group relative block aspect-[4/5] overflow-hidden rounded-sm"
+                className="focus-ring group relative block aspect-[4/5] overflow-hidden rounded-xl"
               >
                 <Media seed={`group-${g.slug}`} alt={g.name[locale]} className="transition-transform duration-500 group-hover:scale-105" sizes="220px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/60 via-transparent to-transparent" />
@@ -76,7 +85,7 @@ export function MegaPanel({ locale, dict }: { locale: Locale; dict: Dictionary }
                 key={row.href}
                 href={`/${locale}${row.href}`}
                 onClick={close}
-                className="focus-ring group flex items-center justify-between rounded-sm bg-[var(--color-cream)] px-4 py-3 transition-colors hover:bg-[var(--color-blush)]/40"
+                className="focus-ring group flex items-center justify-between rounded-xl bg-[var(--color-cream)] px-4 py-3 transition-colors hover:bg-[var(--color-blush)]/40"
               >
                 <span className="flex items-center gap-2 text-[15px]">
                   {row.label}
@@ -99,7 +108,7 @@ export function MegaPanel({ locale, dict }: { locale: Locale; dict: Dictionary }
                   key={tile.seedOcc}
                   href={`/${locale}/occasion/${tile.seedOcc}`}
                   onClick={close}
-                  className="focus-ring group relative block aspect-[4/5] overflow-hidden rounded-sm"
+                  className="focus-ring group relative block aspect-[4/5] overflow-hidden rounded-xl"
                 >
                   <Media seed={`occ-${tile.seedOcc}`} alt={occasion.name[locale]} className="transition-transform duration-500 group-hover:scale-105" sizes="220px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/55 via-transparent to-transparent" />

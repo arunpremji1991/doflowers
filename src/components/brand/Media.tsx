@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { resolveImage } from "@/lib/media";
-import { PatternBackground } from "./Pattern";
 import { Monogram } from "./Monogram";
 import { cn } from "@/lib/utils";
 
@@ -49,6 +48,7 @@ export function Media({ seed, alt, className, sizes, priority }: MediaProps) {
   const hash = hashSeed(seed);
   const [from, to] = GRADIENTS[hash % GRADIENTS.length];
   const rotate = (hash % 5) - 2;
+  const icon = resolveImage("logo-icon-light");
 
   return (
     <div
@@ -57,8 +57,27 @@ export function Media({ seed, alt, className, sizes, priority }: MediaProps) {
       role="img"
       aria-label={alt}
     >
-      <PatternBackground tone="cream" opacity={0.16} tileSize={90} />
-      <Monogram tone="cream" className="h-10 w-10 opacity-70" style={{ transform: `rotate(${rotate}deg)` }} />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url(/uploads/brand/pattern-monogram.svg)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "220px 110px",
+          opacity: 0.14,
+        }}
+        aria-hidden="true"
+      />
+      {icon ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={icon}
+          alt=""
+          className="h-10 w-10 object-contain opacity-70"
+          style={{ transform: `rotate(${rotate}deg)` }}
+        />
+      ) : (
+        <Monogram tone="cream" className="h-10 w-10 opacity-70" style={{ transform: `rotate(${rotate}deg)` }} />
+      )}
     </div>
   );
 }

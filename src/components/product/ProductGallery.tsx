@@ -16,7 +16,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
               key={seed}
               onClick={() => setActive(i)}
               className={cn(
-                "relative h-16 w-14 shrink-0 overflow-hidden border sm:h-20 sm:w-16",
+                "relative h-16 w-14 shrink-0 overflow-hidden rounded-lg border sm:h-20 sm:w-16",
                 active === i ? "border-[var(--color-terracotta)]" : "border-transparent"
               )}
               aria-label={`View image ${i + 1}`}
@@ -26,7 +26,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
           ))}
         </div>
       )}
-      <div className="relative aspect-[4/5] flex-1 overflow-hidden bg-[var(--color-cream)]">
+      <div className="relative h-[420px] w-full flex-1 overflow-hidden rounded-2xl bg-[var(--color-cream)] sm:h-[480px] lg:h-[560px]">
         <Media seed={images[active]} alt={alt} priority sizes="(min-width: 1024px) 45vw, 100vw" />
       </div>
     </div>

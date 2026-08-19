@@ -28,8 +28,18 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-[var(--color-ink)] text-[var(--color-blush)]/85">
-      <PatternBackground tone="cream" opacity={0.05} tileSize={160} className="hidden md:block" />
+    <>
+      <div className="flex justify-center bg-[var(--color-cream)] pt-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/uploads/brand/border-botanical.svg"
+          alt=""
+          aria-hidden="true"
+          className="h-auto w-full max-w-2xl opacity-80"
+        />
+      </div>
+      <footer className="relative overflow-hidden bg-[var(--color-ink)] text-[var(--color-blush)]/85">
+        <PatternBackground tone="cream" opacity={0.05} tileSize={160} className="hidden md:block" />
       <div className="container-luxe relative grid gap-12 py-16 md:grid-cols-[1.3fr_1fr_1fr_1fr] md:py-20">
         <div className="space-y-4">
           <Logo tone="white" variant="full" subtitle={dict.brand.full.replace("DO ", "")} />
@@ -49,7 +59,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </p>
         <p>{dict.footer.currency}</p>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }
 

@@ -134,7 +134,7 @@ export function CheckoutFlow({ locale, dict }: { locale: Locale; dict: Dictionar
               }
               setStepIndex((i) => i + 1);
             }}
-            className="focus-ring flex-1 bg-[var(--color-ink)] py-3 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta)]"
+            className="btn-textured focus-ring flex-1 bg-[var(--color-ink)] py-3 text-xs font-medium uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-terracotta)]"
           >
             {stepIndex === STEPS.length - 2 ? dict.checkout.placeOrder : dict.common.continue}
           </button>
@@ -150,7 +150,7 @@ export function CheckoutFlow({ locale, dict }: { locale: Locale; dict: Dictionar
             if (!product) return null;
             return (
               <li key={line.lineId} className="flex gap-3">
-                <div className="relative h-16 w-14 shrink-0 overflow-hidden bg-[var(--color-cream)]">
+                <div className="relative h-16 w-14 shrink-0 overflow-hidden rounded-lg bg-[var(--color-cream)]">
                   <Media seed={product.images[0]} alt={product.name[locale]} sizes="56px" />
                 </div>
                 <div className="flex flex-1 items-center justify-between text-sm">

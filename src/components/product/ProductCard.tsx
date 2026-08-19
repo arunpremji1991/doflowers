@@ -16,7 +16,7 @@ export function ProductCard({ product, locale, dict }: { product: Product; local
 
   return (
     <div className="group relative">
-      <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-cream)]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--color-cream)]">
         <Link href={`/${locale}/p/${product.slug}`} className="focus-ring block h-full w-full">
           <Media
             seed={product.images[0]}

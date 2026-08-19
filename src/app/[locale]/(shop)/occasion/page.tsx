@@ -18,7 +18,7 @@ export default async function OccasionIndexPage({ params }: { params: Promise<{ 
       <h1 className="mb-8 font-serif text-[32px] sm:text-[40px]">{dict.nav.occasions}</h1>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {occasions.map((o) => (
-          <Link key={o.slug} href={`/${locale}/occasion/${o.slug}`} className="focus-ring group relative block aspect-[4/5] overflow-hidden">
+          <Link key={o.slug} href={`/${locale}/occasion/${o.slug}`} className="focus-ring group relative block aspect-[4/5] overflow-hidden rounded-2xl">
             <Media seed={`occ-${o.slug}`} alt={o.name[locale]} className="transition-transform duration-500 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/55 via-transparent to-transparent" />
             <span className="absolute inset-x-0 bottom-0 p-4 font-serif text-lg text-white">{o.name[locale]}</span>
