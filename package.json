@@ -7,7 +7,9 @@
     "dev": "next dev",
     "prebuild": "node scripts/generate-asset-manifest.js",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "cp -r public .next/standalone/ && mkdir -p .next/standalone/.next && cp -r .next/static .next/standalone/.next/",
+    "start": "node .next/standalone/server.js",
+    "start:dev-mode": "next start",
     "lint": "eslint",
     "assets": "node scripts/generate-asset-manifest.js"
   },
